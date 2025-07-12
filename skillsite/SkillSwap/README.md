@@ -11,7 +11,7 @@
 
 
 
-# run this file
-''' git clone https://github.com/vanshbhanushali/SkillSwap.git
+# Run this file
+git clone https://github.com/vanshbhanushali/SkillSwap.git 
 
-''' cd SkillSwap
+cd SkillSwap 
