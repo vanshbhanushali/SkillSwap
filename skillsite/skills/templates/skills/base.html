@@ -1,0 +1,56 @@
+<!-- skills/templates/skills/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}SkillSwap{% endblock %}</title>
+  <style>
+    /* Your CSS styles for the nav (use a <style> tag or external file) */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      background-color: #714B67;
+      padding: 10px 20px;
+      color: white;
+    }
+    .nav-left .logo {
+      font-size: 1.5em;
+    }
+    .nav-right a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+    .nav-right a:hover {
+      text-decoration: underline;
+    }
+    .notif-icon, .user-profile {
+      margin-left: 15px;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="nav">
+    <div class="nav-left">
+      <span class="logo">🔁 SkillSwap</span>
+    </div>
+    <div class="nav-right">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'browse' %}">Browse</a>
+      <a href="{% url 'my_swaps' %}">My Swaps</a>
+      <a href="{% url 'messages' %}">Messages</a>
+      <span class="notif-icon">🔔</span>
+      <span class="user-profile">JD John Doe</span>
+      <a href="{% url 'my_swaps' %}">My Swaps</a>
+<a href="{% url 'profile' %}">Profile</a>
+
+    </div>
+  </nav>
+
+  <!-- Content of the page -->
+  {% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile - Skill Swap</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: white;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #222;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #444;
+    }
+
+    .navbar .nav-left,
+    .navbar .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      border-bottom: 2px solid white;
+    }
+
+    .navbar img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid #aaa;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      border: 1px solid #444;
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .form-section {
+      flex: 1;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 6px;
+      background: #2c2c2c;
+      color: white;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      background: #333;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tag span {
+      font-size: 0.9rem;
+    }
+
+    .tag button {
+      background: none;
+      border: none;
+      color: #f66;
+      cursor: pointer;
+    }
+
+    .photo-section {
+      width: 220px;
+      text-align: center;
+    }
+
+    .photo-section img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #666;
+      margin-bottom: 1rem;
+    }
+
+    .photo-section .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .photo-section a {
+      text-decoration: none;
+      color: #4caf50;
+      font-size: 0.9rem;
+    }
+
+    .photo-section a.remove {
+      color: #f44336;
+    }
+
+    .actions-bar {
+      text-align: left;
+      padding: 1rem 2rem;
+    }
+
+    .actions-bar button {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-right: 1.5rem;
+    }
+
+    .actions-bar .save {
+      color: #4caf50;
+    }
+
+    .actions-bar .discard {
+      color: #f44336;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      .photo-section {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="navbar">
+    <div class="nav-left">
+      <button class="save">Save</button>
+      <button class="discard">Discard</button>
+    </div>
+    <div class="nav-right">
+      <a href="swap-requests.html">Swap Request</a>
+      <a href="index.html">Home</a>
+      <img src="https://i.pravatar.cc/40" alt="User Profile" />
+    </div>
+  </div>
+
+  <!-- Profile Form -->
+  <div class="container">
+    <div class="form-section">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" placeholder="Enter your name" />
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input id="location" placeholder="Enter your location" />
+      </div>
+
+      <div class="form-group">
+        <label>Skills Offered</label>
+        <div class="tag-container">
+          <div class="tag"><span>Graphic Design</span><button>&times;</button></div>
+          <div class="tag"><span>Video Editing</span><button>&times;</button></div>
+          <div class="tag"><span>Photoshop</span><button>&times;</button></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Skills Wanted</label>
+        <div class="tag-container">
+          <div class="tag"><span>Python</span><button>&times;</button></div>
+          <div class="tag"><span>JavaScript</span><button>&times;</button></div>
+          <div class="tag"><span>Manager</span><button>&times;</button></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="availability">Availability</label>
+        <input id="availability" placeholder="e.g. weekends" />
+      </div>
+
+      <div class="form-group">
+        <label for="profile">Profile</label>
+        <select id="profile">
+          <option>Public</option>
+          <option>Private</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Profile Photo -->
+    <div class="photo-section">
+      <img src="https://i.pravatar.cc/120" alt="Profile Photo" />
+      <div class="actions">
+        <a href="#">Add/Edit</a>
+        <a href="#" class="remove">Remove</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
